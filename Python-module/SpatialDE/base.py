@@ -22,6 +22,7 @@ from .util import qvalue
 
 
 def get_l_limits(X):
+    X = np.array(X)
     Xsq = np.sum(np.square(X), 1)
     R2 = -2. * np.dot(X, X.T) + (Xsq[:, None] + Xsq[None, :])
     R2 = np.clip(R2, 0, np.inf)
